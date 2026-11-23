@@ -1,5 +1,7 @@
 # Welcome to your Lovable project
 
+**Try it here:** [OASIS – Your pause in the chaos.](https://oasis-campus-companion.lovable.app/home)
+
 This project was built with [Lovable](https://lovable.dev).
 
 ## Build with Lovable
