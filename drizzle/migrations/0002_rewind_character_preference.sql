@@ -1,0 +1,3 @@
+ALTER TABLE public.profiles ADD COLUMN IF NOT EXISTS character_preference text;
+ALTER TABLE public.profiles ADD CONSTRAINT profiles_character_preference_valid CHECK (character_preference IS NULL OR character_preference IN ('male', 'female'));
+COMMENT ON COLUMN public.profiles.character_preference IS 'Optional Rewind appearance override independent of avatar and gender; existing owner-only profile policies apply.';

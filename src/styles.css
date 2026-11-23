@@ -1,0 +1,246 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Nunito", system-ui, sans-serif;
+  --font-brand: "Fredoka", "Nunito", sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 16px);
+  --radius-4xl: calc(var(--radius) + 24px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-sky: var(--sky);
+  --color-primary-blue: var(--primary-blue);
+  --color-white: var(--white);
+  --color-mist: var(--mist);
+  --color-olive: var(--olive);
+  --color-teal: var(--teal);
+  --color-navy: var(--navy);
+  --color-sun: var(--sun);
+  --color-mood-amazing: var(--mood-amazing);
+  --color-mood-good: var(--mood-good);
+  --color-mood-okay: var(--mood-okay);
+  --color-mood-low: var(--mood-low);
+  --color-mood-overwhelmed: var(--mood-overwhelmed);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 1rem;
+  --sky: #B9E5FA;
+  --primary-blue: #62B8E7;
+  --mist: #EAF7FF;
+  --offwhite: #FCFEFF;
+  --white: #FFFFFF;
+  --olive: #C9D9B4;
+  --olive-soft: #E8F0DF;
+  --success: #526B43;
+  --teal: var(--primary-blue);
+  --navy: #203B50;
+  --sun: var(--primary-blue);
+  --skin-light: #F2C9A8;
+  --skin-medium: #D9A77F;
+  --skin-deep: #A96F4F;
+
+  --background: var(--mist);
+  --foreground: var(--navy);
+  --card: var(--white);
+  --card-foreground: var(--navy);
+  --popover: var(--white);
+  --popover-foreground: var(--navy);
+  --primary: var(--navy);
+  --primary-foreground: var(--white);
+  --secondary: var(--sky);
+  --secondary-foreground: var(--navy);
+  --muted: var(--mist);
+  --muted-foreground: var(--navy);
+  --accent: var(--sky);
+  --accent-foreground: var(--navy);
+  --destructive: var(--navy);
+  --destructive-foreground: var(--white);
+  --border: #C5DFEF;
+  --input: #C5DFEF;
+  --ring: var(--primary-blue);
+
+  --mood-amazing: var(--primary-blue);
+  --mood-good: var(--primary-blue);
+  --mood-okay: var(--primary-blue);
+  --mood-low: var(--primary-blue);
+  --mood-overwhelmed: var(--primary-blue);
+
+  --chart-1: var(--primary-blue);
+  --chart-2: var(--sky);
+  --chart-3: var(--navy);
+  --chart-4: var(--mist);
+  --chart-5: var(--primary-blue);
+  --sidebar: var(--white);
+  --sidebar-foreground: var(--navy);
+  --sidebar-primary: var(--navy);
+  --sidebar-primary-foreground: var(--white);
+  --sidebar-accent: var(--sky);
+  --sidebar-accent-foreground: var(--navy);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--primary-blue);
+
+  --gradient-sky: linear-gradient(180deg, var(--sky) 0%, var(--mist) 48%, var(--white) 100%);
+  --gradient-dawn: linear-gradient(135deg, var(--white) 0%, var(--sky) 100%);
+  --gradient-lagoon: linear-gradient(125deg, var(--sky) 0%, var(--mist) 65%, var(--white) 100%);
+  --gradient-night: linear-gradient(135deg, var(--navy) 0%, color-mix(in oklab, var(--navy) 82%, var(--primary-blue)) 100%);
+  --shadow-soft: 0 20px 50px -24px color-mix(in oklab, var(--navy) 35%, transparent);
+  --shadow-glow: 0 0 60px 10px color-mix(in oklab, var(--primary-blue) 38%, transparent);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { font-family: var(--font-display); letter-spacing: 0; }
+}
+
+@utility bg-sky-gradient { background-image: var(--gradient-sky); }
+@utility bg-dawn { background-image: var(--gradient-dawn); }
+@utility bg-lagoon { background-image: var(--gradient-lagoon); }
+@utility bg-night { background-image: var(--gradient-night); }
+@utility shadow-soft { box-shadow: var(--shadow-soft); }
+@utility shadow-glow { box-shadow: var(--shadow-glow); }
+@utility glass {
+  background: color-mix(in oklab, var(--offwhite) 88%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid color-mix(in oklab, var(--offwhite) 80%, transparent);
+}
+
+@keyframes drift { from { transform: translateX(-30vw); } to { transform: translateX(130vw); } }
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes blink { 0%, 92%, 100% { transform: scaleY(1); } 95% { transform: scaleY(0.1); } }
+@keyframes twinkle { 0%, 100% { opacity: 0.2; } 50% { opacity: 1; } }
+@utility animate-drift { animation: drift linear infinite; }
+@utility animate-bob { animation: bob 4.5s ease-in-out infinite; }
+@utility animate-blink { animation: blink 5s infinite; transform-origin: center; transform-box: fill-box; }
+@utility animate-twinkle { animation: twinkle 3s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+
+@layer base { body { font-size: 16px; line-height: 1.6; } label { font-size: 1rem; } button, a { letter-spacing: 0; } }
+@utility rewind-sky { background: var(--gradient-lagoon); color: var(--navy); }
+@utility rewind-deep { background: var(--gradient-night); color: var(--offwhite); }
+
+/* Fixed behind every application tab, independent of page height. */
+.shared-clouds { position: fixed; z-index: 0; }
+.shared-clouds svg { width: 340px !important; opacity: .85 !important; }
+@media (max-width: 640px) { .shared-clouds svg { width: 230px !important; } }
+
+/* Expressive blue mood faces */
+.mood-face { filter: drop-shadow(0 2px 2px color-mix(in oklab, var(--navy) 8%, transparent)); transform-origin: center; }
+.mood-face-selected { animation: mood-select 650ms cubic-bezier(.2,.8,.2,1) both; }
+.mood-face-selected .mood-features { animation: mood-feature-pop 900ms 250ms ease-in-out both; transform-origin: center; transform-box: fill-box; }
+.mood-face-selected .mood-sparkling-eyes { animation: mood-sparkle 1.1s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+@keyframes mood-select { 0% { transform: translateY(0) scale(1); } 38% { transform: translateY(-10px) scale(1.08); } 68% { transform: translateY(2px) scale(.98); } 100% { transform: translateY(0) scale(1); } }
+@keyframes mood-feature-pop { 0%,100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+@keyframes mood-sparkle { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .78; transform: scale(1.08); } }
+
+/* Nested local joints keep every limb attached through all poses. */
+.student-character { overflow: visible; }
+.student-joint { transform-box: view-box; transform-origin: 0 0; }
+.student-walking .student-body { animation: student-body-step .8s ease-in-out infinite; }
+.student-walking .student-leg-left { animation: student-leg-step .8s ease-in-out infinite; }
+.student-walking .student-leg-right { animation: student-leg-step .8s -.4s ease-in-out infinite; }
+.student-walking .student-knee-left { animation: student-knee .8s ease-in-out infinite; }
+.student-walking .student-knee-right { animation: student-knee .8s -.4s ease-in-out infinite; }
+.student-walking .student-arm-left { animation: student-arm-step .8s -.4s ease-in-out infinite; }
+.student-walking .student-arm-right { animation: student-arm-step .8s ease-in-out infinite; }
+.student-typing .student-forearm-left { animation: student-type .36s ease-in-out infinite; }
+.student-typing .student-forearm-right { animation: student-type .36s -.18s ease-in-out infinite; }
+.student-waving .student-forearm-right, .student-talking .student-forearm-right { animation: student-wave 1.15s ease-in-out infinite; }
+.student-talking .student-mouth { animation: student-talk .48s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.student-smiling .student-head { animation: student-smile 2.2s ease-in-out infinite; }
+.student-reading .student-head { animation: student-read 2.8s ease-in-out infinite; }
+.student-book-page { animation: student-page 2.4s ease-in-out infinite; }
+.student-celebrating .student-body { animation: student-celebrate .85s ease-in-out infinite; }
+.student-celebrating .student-forearm-left, .student-celebrating .student-forearm-right { animation: student-wave 1.4s ease-in-out infinite; }
+.student-breathing .student-body { animation: student-breathe 5s ease-in-out infinite; transform-box: view-box; transform-origin: 110px 240px; }
+.student-exercising .student-forearm-left { animation: student-curl 1.5s ease-in-out infinite; }
+.student-exercising .student-forearm-right { animation: student-curl-right 1.5s ease-in-out infinite; }
+@keyframes student-body-step { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+@keyframes student-leg-step { 0%,100% { transform: rotate(10deg); } 50% { transform: rotate(-10deg); } }
+@keyframes student-knee { 0%,50%,100% { transform: rotate(0); } 75% { transform: rotate(-13deg); } }
+@keyframes student-arm-step { 0%,100% { transform: rotate(-6deg); } 50% { transform: rotate(6deg); } }
+@keyframes student-type { 0%,100% { transform: rotate(0); } 50% { transform: rotate(5deg); } }
+@keyframes student-wave { 0%,100% { transform: rotate(-6deg); } 50% { transform: rotate(9deg); } }
+@keyframes student-talk { 0%,100% { transform: scaleY(1); } 50% { transform: scaleY(.55); } }
+@keyframes student-smile { 0%,100% { transform: rotate(0); } 50% { transform: rotate(2deg); } }
+@keyframes student-read { 0%,100% { transform: rotate(0); } 50% { transform: rotate(3deg); } }
+@keyframes student-page { 0%,100% { opacity: 1; } 50% { opacity: .45; } }
+@keyframes student-celebrate { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+@keyframes student-breathe { 0%,100% { transform: scale(1); } 50% { transform: scale(1.02); } }
+@keyframes student-curl { 0%,100% { transform: rotate(-25deg); } 50% { transform: rotate(12deg); } }
+@keyframes student-curl-right { 0%,100% { transform: rotate(25deg); } 50% { transform: rotate(-12deg); } }
+
+/* Illustrated film scenery and environmental motion */
+.film-cloud { animation: film-cloud-drift 12s ease-in-out infinite alternate; }
+.film-cloud-two { animation-duration: 16s; animation-direction: alternate-reverse; }
+.film-confetti-piece { animation: film-confetti-fall 2.8s linear infinite; transform-box: fill-box; transform-origin: center; }
+.film-code-line { animation: film-code 1.4s ease-in-out infinite; }
+.film-steam { animation: film-steam 2s ease-in-out infinite; }
+.film-complete-badge { animation: film-badge 1.8s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.film-booth-left { animation: film-booth-left 5s ease-in-out infinite alternate; }
+.film-booth-right { animation: film-booth-right 5.5s ease-in-out infinite alternate; }
+.film-storm-cloud { animation: film-cloud-clear 6s ease-in-out forwards; }
+.film-breath-rings { animation: film-rings 5s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.film-palms { animation: film-palms 4s ease-in-out infinite alternate; transform-origin: bottom center; transform-box: fill-box; }
+.rewind-paused *, .rewind-paused *::before, .rewind-paused *::after { animation-play-state: paused !important; }
+@keyframes film-cloud-drift { from { transform: translateX(-22px); } to { transform: translateX(65px); } }
+@keyframes film-confetti-fall { 0% { transform: translateY(-90px) rotate(0); opacity: 0; } 15% { opacity: 1; } 100% { transform: translateY(350px) rotate(260deg); opacity: 0; } }
+@keyframes film-code { 0%,100% { opacity: .45; stroke-dasharray: 30 8; } 50% { opacity: 1; stroke-dasharray: 80 4; } }
+@keyframes film-steam { 0%,100% { transform: translateY(4px); opacity: .25; } 50% { transform: translateY(-9px); opacity: .9; } }
+@keyframes film-badge { 0%,100% { transform: scale(1) rotate(-3deg); } 50% { transform: scale(1.08) rotate(3deg); } }
+@keyframes film-booth-left { from { transform: translateX(-4px); } to { transform: translateX(5px); } }
+@keyframes film-booth-right { from { transform: translateX(4px); } to { transform: translateX(-5px); } }
+@keyframes film-cloud-clear { 0% { transform: translateX(0); opacity: .5; } 100% { transform: translateX(-240px); opacity: 0; } }
+@keyframes film-rings { 0%,100% { transform: scale(.9); opacity: .2; } 50% { transform: scale(1.08); opacity: .5; } }
+@keyframes film-palms { from { transform: rotate(-1deg); } to { transform: rotate(1.5deg); } }

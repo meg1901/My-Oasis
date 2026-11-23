@@ -1,0 +1,10 @@
+- [x] Make the interface predominantly blue and restrict sage green to success and completion accents.
+- [x] Replace mood faces with a consistent expressive blue illustration set and selection motion.
+- [x] Turn Rewind into a 54 second animated journal story with reusable student characters and avatar based appearance.
+- [x] Test story mapping, playback controls, demo scenes, existing routes and desktop/mobile layouts.
+- [x] Complete ASU signup confirmation and resend, verified only access, onboarding interests and avatar, and profile aware login redirects.
+- [ ] Verify real signup email confirmation, login/logout and real profile/mood/journal persistence. Blocked: managed session and temporary-user creation failed; needs a verified student signed in through the preview.
+- [x] Separate demo and personal Rewind with current-month preview and honest empty states.
+- [x] Save independent character preference and repair connected animation joints.
+- [x] Restore shared clouds and match the supplied sun, cloud, cross, crescent and overwhelmed illustrations in solid blues.
+- [x] Run 40 rule/routing tests, demo saving and playback checks, all eight joint animation checks, and desktop/mobile tab checks.
